@@ -1,0 +1,33 @@
+<!-- <p>task-list works!</p> -->
+
+<div>
+    <button (click)="addTask()">Anadir tarea</button>
+</div>
+
+<br>
+
+<div class="task" *ngFor="let task of taskList; let i = index">
+
+    <div>
+        <span class="title">Numero de tarea:</span> {{i+1}}
+
+        <span class="remove">
+            <button (click)='removeTask(i)'>Eliminar tarea</button>
+        </span>
+    </div>
+
+    <br>
+
+    <div>
+        <span class="title">Descripcion:</span>
+        <input [(ngModel)]="task.description" type="text">
+    </div>
+
+    <div>
+        <span class="title">Estado:</span>
+        <input [(ngModel)]="task.status" type="text">
+    </div>
+
+    <br>
+
+</div>
