@@ -1,12 +1,20 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserModule } from '@angular/platform-browser';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+
+import {MatButtonModule} from '@angular/material/button';
+import {MatDialogModule} from '@angular/material/dialog'; 
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatIconModule} from '@angular/material/icon';
+import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+//import {TasksService} from './services/tasks/api/tasks.service'
 
 import { AppComponent } from './app.component';
 import { TaskListComponent } from './task-list/task-list.component';
-
-import appRoutes from './routerConfig';
 
 @NgModule({
   declarations: [
@@ -15,8 +23,17 @@ import appRoutes from './routerConfig';
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes),
-    FormsModule
+    HttpClientModule,
+    NoopAnimationsModule,
+    MatButtonModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatSnackBarModule,
+    MatInputModule,
+    MatSelectModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
